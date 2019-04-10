@@ -1,7 +1,9 @@
 import React from "react";
 import { Query } from "react-apollo";
 
+import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
 
 import getCalls from "../../../graphql/queries/getCalls";
 import callsSubscription from "../../../graphql/subscriptions/callsSubscription";
@@ -16,17 +18,16 @@ class Dashboard extends React.PureComponent {
 
   public render(): JSX.Element {
     return (
-      <Container className="mt-3">
+      <Container className="mt-3 d-flex flex-column">
         <h1>Dashboard</h1>
-        <hr />
         <Query query={getCalls}>
           {({ loading, error, data, subscribeToMore }: any) => {
             if (loading) {
-              return <div>loading...</div>;
+              return <Spinner animation="grow" className="align-self-center" variant="primary" />;
             }
 
             if (error) {
-              return <div>Error</div>;
+              return <Alert variant="danger">Error while trying to fetch the currents calls.</Alert>;
             }
 
             return <CallsTable calls={data.calls} subscribeToCalls={() => this.subscribe(subscribeToMore)} />;
