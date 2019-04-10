@@ -4,13 +4,22 @@ services:
     image: "node:10.15.3-alpine"
     container_name: teravoz-dashboard-node
     ports:
-      - 3000:3000
+      - 3080:3000
     volumes:
       - ./:/app
     working_dir: /app
     command: yarn start
     networks:
       - teravoz-dashboard
+  teravoz-dashboard-nginx:
+    container_name: teravoz-dashboard-nginx
+    build: ./docker/nginx/
+    ports:
+      - 3000:3000
+    networks:
+      - teravoz-dashboard
+    depends_on:
+      - teravoz-dashboard-node
 networks:
   teravoz-dashboard:
     driver: bridge
