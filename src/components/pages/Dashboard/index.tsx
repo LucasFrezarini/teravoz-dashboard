@@ -58,9 +58,13 @@ class Dashboard extends React.PureComponent {
             return prev;
           }
 
-          const updatedCalls = prev.calls.slice(0); // copy the old data object to avoid modifying it
+          let updatedCalls = prev.calls.slice(0); // copy the old data object to avoid modifying it
 
-          updatedCalls[index] = data;
+          if (data.type === "call.finished") {
+            updatedCalls.splice(index, 1);
+          } else {
+            updatedCalls[index] = data;
+          }
 
           return {
             ...prev,
