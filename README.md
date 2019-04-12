@@ -45,7 +45,7 @@ docker-compose up -d --build
 
 # Project Structure
 
-The Project has been created using [Create React App](https://facebook.github.io/create-react-app/) with the [Typescript](https://www.typescriptlang.org/) base template. [Bootstrap](https://getbootstrap.com/) is used as the CSS Framework, wrapped with [React Bootstrap](https://react-bootstrap.github.io/). It also uses [Apollo](https://www.apollographql.com/) and [React Apollo](https://github.com/apollographql/react-apollo), that provides a awesome away to integrate with GraphQL APIs.
+The Project has been created using [Create React App](https://facebook.github.io/create-react-app/) with the [Typescript](https://www.typescriptlang.org/) base template. [Bootstrap](https://getbootstrap.com/) is used as the CSS Framework, wrapped with [React Bootstrap](https://react-bootstrap.github.io/). It also uses [Apollo](https://www.apollographql.com/) and [React Apollo](https://github.com/apollographql/react-apollo), that provides an awesome way to integrate with GraphQL APIs.
 
 The main objective of the project is to show a simple and realtime dashboard that display the actual ocurring calls. The best way to test it is to configure the backend and POST into the webhook endpoint to see the dashboard updating. The finished calls are cleared from the dashboard instantly.
 

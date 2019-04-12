@@ -27,7 +27,7 @@ class Dashboard extends React.PureComponent {
             }
 
             if (error) {
-              return <Alert variant="danger">Error while trying to fetch the currents calls.</Alert>;
+              return <Alert variant="danger">Error while trying to fetch the current calls.</Alert>;
             }
 
             return <CallsTable calls={data.calls} subscribeToCalls={() => this.subscribe(subscribeToMore)} />;
