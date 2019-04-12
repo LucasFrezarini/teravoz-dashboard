@@ -5,7 +5,6 @@ import { faCloud } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
-import Footer from "./components/shared/Footer";
 import Header from "./components/shared/Header";
 import Dashboard from "./components/pages/Dashboard";
 
